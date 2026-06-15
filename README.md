@@ -6,15 +6,12 @@ Syntax highlighting for [Elsa](https://github.com/ucsd-progsys/elsa) — UCSD's 
 
 - Syntax highlighting for `.lc` files
 - Highlights: keywords (`let`, `eval`, `conf`), step operators (`=b>`, `=d>`, `=n*>`, …), lambda syntax (`\x -> …`), variables, comments
-- Bracket matching for parentheses and block comments `{- -}`
 - Line comment toggling with `--`
+- Bracket matching for parentheses and block comments `{- -}`
 
-## Elsa language quick reference
+## Elsa language example
 
 ```haskell
--- line comment
-{- block comment -}
-
 -- define a term
 let id   = \x -> x
 let zero = \f x -> x
@@ -63,14 +60,4 @@ Search for **Elsa** in `zed: extensions`.
 # In Zed, open command palette and run:
 # zed: install dev extension
 # Point it at the zed-elsa directory
-```
-
-## Publishing
-
-Before publishing, update `extension.toml` to point at the published tree-sitter-elsa commit:
-
-```toml
-[grammars.elsa]
-repository = "https://github.com/MrPoloGit/tree-sitter-elsa"
-commit = "<sha-after-push>"
 ```
