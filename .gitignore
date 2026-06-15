@@ -1,6 +1,4 @@
 .DS_Store
 target/
 *.wasm
-
-# Zed clones grammars here when loading the dev extension
 grammars/
