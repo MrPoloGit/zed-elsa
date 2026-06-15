@@ -61,3 +61,8 @@ Search for **Elsa** in `zed: extensions`.
 # zed: install dev extension
 # Point it at the zed-elsa directory
 ```
+
+### Related resources
+- https://github.com/ucsd-progsys/elsa
+- https://hackage-content.haskell.org/package/elsa-0.3.0.0/docs/doc-index.html
+- https://elsa.goto.ucsd.edu/index.html
