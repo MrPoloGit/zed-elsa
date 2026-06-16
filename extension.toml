@@ -11,3 +11,7 @@ repository = "https://github.com/MrPoloGit/zed-elsa"
 [grammars.elsa]
 repository = "https://github.com/MrPoloGit/tree-sitter-elsa"
 rev = "ea156226ffcc0659b7e1a7d1f94fcf204df73d2c"
+
+[language_servers.elsa-lsp]
+name = "Elsa LSP"
+languages = ["Elsa"]
