@@ -6,7 +6,7 @@ authors = [
     "MrPoloGit",
 ]
 description = "Syntax highlighting and completion for the Elsa lambda calculus teaching language (.lc files)"
-repository = "https://github.com/MrPoloGit/zed-elsa"
+repository = "https://github.com/MrPoloGit/elsa-lang"
 
 [grammars.elsa]
 repository = "https://github.com/MrPoloGit/tree-sitter-elsa"
