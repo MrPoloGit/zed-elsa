@@ -54,10 +54,17 @@ impl ElsaExtension {
             &LanguageServerInstallationStatus::Downloading,
         );
 
-        let url = format!(
-            "https://github.com/MrPoloGit/elsa-lsp/releases/download/v{}/{}",
-            LSP_VERSION, asset
-        );
+        let release = zed::github_release_by_tag_name(
+            "MrPoloGit/elsa-lsp",
+            &format!("v{}", LSP_VERSION),
+        )
+        .map_err(|e| format!("failed to fetch elsa-lsp release: {e}"))?;
+
+        let asset_info = release
+            .assets
+            .iter()
+            .find(|a| a.name == asset)
+            .ok_or_else(|| format!("no asset '{asset}' in elsa-lsp v{LSP_VERSION}"))?;
 
         let file_type = if asset.ends_with(".zip") {
             DownloadedFileType::Zip
@@ -65,7 +72,7 @@ impl ElsaExtension {
             DownloadedFileType::GzipTar
         };
 
-        zed::download_file(&url, &install_dir, file_type)
+        zed::download_file(&asset_info.download_url, &install_dir, file_type)
             .map_err(|e| format!("failed to download elsa-lsp: {e}"))?;
 
         zed::make_file_executable(&binary_path)
